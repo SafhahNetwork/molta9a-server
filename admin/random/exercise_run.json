@@ -1,0 +1,12 @@
+{
+  "Files": {
+    "main.js": {
+      "name": "main.js",
+      "value": "const firstname = \"achraf\";\nconsole.log(firstname);"
+    },
+    "package.json": {
+      "name": "package.json",
+      "value": "{\n    \"name\": \"code-teaching-website\",\n    \"version\": \"1.0.0\",\n    \"description\": \"A dummy package.json for a code teaching website\",\n    \"scripts\": {\n        \"start\": \"node server.js\"\n    },\n    \"dependencies\": {\n        \"express\": \"^4.17.1\"\n    }\n}"
+    }
+  }
+}
