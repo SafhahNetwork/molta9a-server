@@ -20,5 +20,5 @@ func Init() {
 	}
 
 	// Migrate the schema
-	DB.AutoMigrate(&User{}, &Track{}, &Quest{}, &Module{}, &UserTrack{}, &UserModule{})
+	DB.AutoMigrate(&User{}, &Course{}, &Quest{}, &Exercise{}, &UserCourse{}, &UserExercise{})
 }

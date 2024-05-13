@@ -13,8 +13,16 @@ var (
 	ErrInvalidAuthorizationTokenClaims = errors.New("INVALID_AUTHORIZATION_TOKEN_CLAIMS")
 	ErrSomethingWentWrong              = errors.New("SOMETHING_WENT_WRONG")
 
-	ErrModuleNotFound = errors.New("MODULE_NOT_FOUND")
+	ErrExerciseNotFound   = errors.New("Exercise_NOT_FOUND")
+	ErrDidntStartExercise = errors.New("EXERCISE_NOT_STARTED")
+
 	ErrModuleFinished = errors.New("MODULE_FINISHED")
+
+	ErrCourseNotFound       = errors.New("COURSE_NOT_FOUND")
+	ErrAlreadyStartedCourse = errors.New("COURSE_ALREADY_STARTED")
+	ErrDidntStartCourse     = errors.New("COURSE_NOT_STARTED")
+
+	ErrUserNotFound = errors.New("USER_NOT_FOUND")
 )
 
 // Validation

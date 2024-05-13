@@ -5,7 +5,7 @@ import (
 	"gorm.io/gorm"
 )
 
-type Track struct {
+type Course struct {
 	gorm.Model
 
 	Name        string
@@ -16,53 +16,53 @@ type Track struct {
 	Languages  pq.StringArray `gorm:"type:text[]"`
 	Tags       pq.StringArray `gorm:"type:text[]"`
 
-	TotalXp      uint
-	TotalModules uint
-	TotalUsers   uint
+	TotalXp        uint
+	TotalExercises uint
+	TotalUsers     uint
 }
 
 type Quest struct {
 	gorm.Model
-	TrackID uint
+	CourseID uint
 
 	Name string
 }
 
-type Module struct {
+type Exercise struct {
 	gorm.Model
 
-	Index uint // ID relative to the track
+	Index uint // ID relative to the course
 
-	TrackID uint
-	QuestID uint
+	CourseID uint
+	QuestID  uint
 
 	Name string
 	Type uint8 // 0=lesson 1=exercise
 
-	Markdown *string
-	Exercise *string
+	Markdown       *string
+	ExerciseConfig *string
 
 	TotalXp    uint
 	TotalUsers uint
 }
 
-type UserTrack struct {
+type UserCourse struct {
 	gorm.Model
 	UserID   uint
-	TrackID  uint
+	CourseID uint
 	Status   string // active, completed, frozen
 	Progress uint8
 
-	Track *Track `gorm:"foreignkey:track_id"`
+	Course *Course `gorm:"foreignkey:course_id"`
 }
 
-type UserModule struct {
+type UserExercise struct {
 	gorm.Model
-	UserID   uint
-	TrackID  uint
-	QuestID  uint
-	ModuleID uint
-	TotalXp  uint
+	UserID     uint
+	CourseID   uint
+	QuestID    uint
+	ExerciseID uint
+	TotalXp    uint
 
 	Status string
 	Files  *string
@@ -79,12 +79,12 @@ type User struct {
 	TotalXp        uint
 	TotalExercises uint
 	TotalLessons   uint
-	TotalTracks    uint
+	TotalCourses   uint
 }
 
 // type UserActivity struct {
 // 	UserID    uint
-// 	ModuleID  uint
+// 	ExerciseID  uint
 // 	TotalXp   uint
 // 	CreatedAt time.Time
 // }
@@ -98,7 +98,7 @@ type File struct {
 	ReadOnly bool
 }
 
-type Exercise struct {
+type ExerciseConfig struct {
 	DockerImage string
 	Env         []string
 	Args        []string
