@@ -1,8 +1,11 @@
 #!/bin/bash
 #
-docker start postgres pgadmin registry zealous_franklin
+# docker start postgres pgadmin registry zealous_franklin
 
+export VAULT_PATH="/home/achraf/Projects/molta9a/vault"
 export POSTGRES_DSN="host=192.168.1.69 user=postgres password=admin dbname=mol port=5432 sslmode=disable"
 export REDIS_URI="redis://@192.168.1.69:6379/0"
 
-go run ./bin/api/main.go
+# go run ./bin/api/main.go
+
+go run ./vault/vault.go

@@ -12,6 +12,7 @@ var (
 	ErrInvalidAuthorizationToken       = errors.New("INVALID_AUTHORIZATION_TOKEN")
 	ErrInvalidAuthorizationTokenClaims = errors.New("INVALID_AUTHORIZATION_TOKEN_CLAIMS")
 	ErrSomethingWentWrong              = errors.New("SOMETHING_WENT_WRONG")
+	ErrAccessDenied                    = errors.New("ACCESS_DENIED")
 
 	ErrExerciseNotFound   = errors.New("Exercise_NOT_FOUND")
 	ErrDidntStartExercise = errors.New("EXERCISE_NOT_STARTED")
